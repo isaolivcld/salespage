@@ -1,0 +1,29 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body{
+  background-color: #e8e8e8;
+}
+
+.btncopy{
+  background-color: #6E2CFA;
+  margin-top: 1rem;
+  border-radius: 5px;
+  padding: 0.5rem;
+  text-transform: uppercase;
+  color: white;
+}
+
+
+
+.navbar{
+  background-color: black;
+}
+
+.pl-estudos img{
+  min-width: 200px;
+  max-height: 400px;
+  width: 100%;
+  height: 100%;
+}
