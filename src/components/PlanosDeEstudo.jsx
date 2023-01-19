@@ -24,55 +24,6 @@ const PlanosDeEstudo = () => {
     })
   } */
 
-  const [btnCollor, setBtnCollor] = useState ('#6E2CFA')
-
-  const handleBtnCollor = () =>{
-    setBtnCollor(!btnCollor)
-  }
-
-  function changeBtnCollor (){
-      setBtnCollor('green');
-      setTimeout(() => {
-      setBtnCollor('#6E2CFA')
-      }, 2000);
-        }
-/*   const images = [{PE_1,},PE_2,PE_3]; */
-   const images = [
-    { src:PE_1, caption: 'Imagem 1' },
-    { src:PE_2, caption: 'Imagem 2' },
-    { src:PE_3, caption: 'Imagem 3' },
-  ]; 
-
-  async function copyToClipBoard(src) {
-    const data = await fetch(src)
-    const blob = await data.blob();
-
-      try{
-        await navigator.clipboard.write([
-          new ClipboardItem({
-            [blob.type]: blob,
-          })
-        ])
-        console.log("Sucess");
-      } catch(e) {
-        console.log(e)
-      }
-
-      changeBtnCollor()
-      
-    } 
-    
-    const [btnText, setBtnText] = useState ('')
-    
-    useEffect(()=>{
-      if(btnCollor === 'green'){
-        setBtnText ('Copiado!')
-        } else {
-            setBtnText('Copiar')
-        } 
-      
-    }, [btnCollor])
-
   return (
     <div className='w-full pt-[5rem] px-4 max-w-[1240px] mx-auto'>
       <div className='text-[40px] text-black mb-4'>
@@ -84,10 +35,10 @@ const PlanosDeEstudo = () => {
                 <div key={image.src} className='grid mx-auto'>
                   <img src={image.src} alt="/"></img> 
                       <div className='text-center mt-3' >{image.caption}</div>
-                     <button id='btn-copy' className='btncopy' onClick={() => copyToClipBoard(image.src, setBtnCollor)} style={{backgroundColor: btnCollor}}>
+                     <button className='btncopy' onClick={() => copyToClipBoard(image.src, setBtnCollor())} style={{backgroundColor: btnCollor}}>
                         {btnText}
-                      </button>
-              </div>
+                     </button>
+                </div>
               )}
           </div>
         </div>
