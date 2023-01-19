@@ -1,8 +1,5 @@
 import React,{Fragment, useState, useEffect} from 'react'
-import PE_1 from '../images/PE_1.png'
-import PE_2 from '../images/PE_2.png'
-import PE_3 from '../images/PE_3.png'
-
+import CopyBtn from '../Utilities/CopyBtn'
 
 const PlanosDeEstudo = () => {
 
