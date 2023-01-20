@@ -1,8 +1,36 @@
-import React from 'react'
+import React, {useState} from 'react'
+import classNames from 'classnames'
 
-const CopyBtn = () => {
+async function copyToClipBoard(src) {
+  const data = await fetch(src)
+  const blob = await data.blob();
+
+    try{
+      await navigator.clipboard.write([
+        new ClipboardItem({
+          [blob.type]: blob,
+        })
+      ])
+      console.log("Sucess");
+    } catch(e) {
+      console.log(e)
+    }
+} 
+const CopyBtn = ({copyToClipBoard}) => {
+
+  const [isPressed, setIsPressed] = useState(false);
+  const btnClass = classNames({
+    btn: true,
+    'btnOnClick': isPressed
+  })
+  const btnClick = () =>{
+    setIsPressed(true);
+    
+  }
+
+
   return (
-    <div>CopyBtn</div>
+    <button onClick={CopyBtn}></button>
   )
 }
 

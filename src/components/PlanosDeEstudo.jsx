@@ -4,16 +4,12 @@ import PE_1 from '../images/PE_1.png'
 import PE_2 from '../images/PE_1.png'
 import PE_3 from '../images/PE_1.png'
 import {VendaseSuporte} from '../Utilities/ImagensVendasESuporte'
+import { Outlet } from 'react-router-dom'
  
 
 const PlanosDeEstudo = () => {
 
 
-/*   const VendaseSuporte = [
-    { src: PE_1, caption: 'Abacaxi 1' },
-    { src:'https://s3.us-west-2.amazonaws.com/secure.notion-static.com/d3d8739b-56d0-4273-aff8-6596fcaa2209/NUBANK_%281%29.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20230120%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20230120T130847Z&X-Amz-Expires=86400&X-Amz-Signature=118e9431210b1fad6f3f2df179fc4a549383a40d0ac29f13ea097143e9da0087&X-Amz-SignedHeaders=host&response-content-disposition=filename%3D"NUBANK%2520%281%29.png"&x-id=GetObject', caption: 'Imagem 2' },
-    { src:'https://s3.us-west-2.amazonaws.com/secure.notion-static.com/7d126c1f-09cc-42b4-ae87-8e37979b3bf8/BRADESCO.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20230120%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20230120T134255Z&X-Amz-Expires=86400&X-Amz-Signature=aaac29043caef18a3d893528287dfdc0556c197a345b4bc9c38df2d7e98fea5e&X-Amz-SignedHeaders=host&response-content-disposition=filename%3D"BRADESCO.png"&x-id=GetObject', caption: 'Kiwi 3' },
-] */
 
 async function copyToClipBoard(src) {
   const data = await fetch(src)
@@ -51,6 +47,7 @@ async function copyToClipBoard(src) {
               )}
           </div>
         </div>
+        <Outlet/>
     </div>
   )
   
