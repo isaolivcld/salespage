@@ -3,7 +3,7 @@ import {
 AiOutlineClose,
 AiOutlineMenu} from 'react-icons/ai'
 import Avatar_checkout from '../images/Avatar_checkout.png'
-import { Link } from 'react-router-dom'
+import { BrowserRouter, Link } from 'react-router-dom'
 
 const Navbar = () => {
 
@@ -17,7 +17,7 @@ const Navbar = () => {
     <div className='flex justify-between px-4 items-center h-24 max-w-[1240px] mx-auto text-black'>
             <img className='p-4 w-[10%]' src={Avatar_checkout} alt="logo bp" />
         <ul className='hidden md:flex'>
-           <Link to="/"><li className='p-4'>Vendas/Suporte</li></Link>
+          <Link to="/"><li className='p-4'>Vendas/Suporte</li></Link>
            <Link to="/campanhasmkt"><li className='p-4'>Campanhas MKT</li></Link>
            <Link to="/mecenas"><li className='p-4'>Mecenas</li></Link>
         </ul>
